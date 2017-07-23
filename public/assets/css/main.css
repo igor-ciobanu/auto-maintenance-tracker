@@ -1,0 +1,43 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+* {
+  box-sizing: inherit; }
+
+.app-navbar {
+  display: block;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #ffd740;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14); }
+  .app-navbar .nav__link {
+    display: inline-block;
+    padding: 6px;
+    text-transform: none; }
+
+.example-container {
+  display: block;
+  margin: 0 auto;
+  width: 90%; }
+
+.material__shadow {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14); }
+
+.padding-24 {
+  padding: 24px; }
+
+.table__actions {
+  display: flex !important;
+  flex-direction: column !important; }
+
+.mat-header-row, .mat-row {
+  height: auto !important; }
+
+.add-car__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 24px; }
+
+/*# sourceMappingURL=main.css.map */

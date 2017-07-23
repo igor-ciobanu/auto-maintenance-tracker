@@ -1,0 +1,9 @@
+<form (ngSubmit)="maintain()" #carForm="ngForm">
+    <md-select placeholder="Type" name="maintenanceRule" required [(ngModel)]="maintenanceRuleId">
+        <md-option *ngFor="let maintenanceType of car.maintenances " [value]="maintenanceType.id">{{ maintenanceType.type }}</md-option>
+    </md-select>
+    <md-input-container>
+        <input mdInput type="number" name="maintenanceKm" placeholder="Current Km" [(ngModel)]="maintenanceKm" required>
+    </md-input-container>
+    <button type="submit" md-button [disabled]="!carForm.form.valid">Maintain</button>
+</form>

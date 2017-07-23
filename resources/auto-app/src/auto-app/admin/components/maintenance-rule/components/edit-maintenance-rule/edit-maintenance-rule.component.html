@@ -1,0 +1,6 @@
+<form (ngSubmit)="update()" #maintenanceRuleForm="ngForm">
+    <md-input-container>
+        <input mdInput type="number" name="maintenanceRuleName" placeholder="Maintenance KM" [(ngModel)]="maintenanceRule.km" required>
+    </md-input-container>
+    <button type="submit" md-button [disabled]="!maintenanceRuleForm.form.valid">Update</button>
+</form>

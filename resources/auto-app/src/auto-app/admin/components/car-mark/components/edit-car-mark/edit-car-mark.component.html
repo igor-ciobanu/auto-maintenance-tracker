@@ -1,0 +1,6 @@
+<form (ngSubmit)="update()" #carMarkForm="ngForm">
+    <md-input-container>
+        <input mdInput type="text" name="carMarkName" placeholder="Car Mark Name" [(ngModel)]="carMark.name" required>
+    </md-input-container>
+    <button type="submit" md-button [disabled]="!carMarkForm.form.valid">Update</button>
+</form>

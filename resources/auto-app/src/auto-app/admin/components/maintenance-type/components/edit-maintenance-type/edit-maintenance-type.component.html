@@ -1,0 +1,6 @@
+<form (ngSubmit)="update()" #maintenanceTypeForm="ngForm">
+    <md-input-container>
+        <input mdInput type="text" name="maintenanceTypeName" placeholder="Maintenance Type Name" [(ngModel)]="maintenanceType.name" required>
+    </md-input-container>
+    <button type="submit" md-button [disabled]="!maintenanceTypeForm.form.valid">Update</button>
+</form>

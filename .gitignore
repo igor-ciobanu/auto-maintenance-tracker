@@ -1,0 +1,14 @@
+.idea/
+.DS_Store
+
+phpunit.xml
+
+vendor/
+node_modules/
+config/development.config.php
+
+data/DoctrineORMModule
+data/cache/*
+!data/cache/.gitkeep
+
+db.env

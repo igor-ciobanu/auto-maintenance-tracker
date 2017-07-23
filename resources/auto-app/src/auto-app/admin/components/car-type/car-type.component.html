@@ -1,0 +1,23 @@
+<div class="mat-elevation-z8">
+
+    <div class="add-car__wrapper">
+        <button md-raised-button (click)="createCarType()">Add Type</button>
+    </div>
+
+    <md-table #table [dataSource]="carTypeList">
+        <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+        <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+        <ng-container cdkColumnDef="name">
+            <md-header-cell *cdkHeaderCellDef> Name </md-header-cell>
+            <md-cell *cdkCellDef="let row"> {{row.type}} </md-cell>
+        </ng-container>
+        <ng-container cdkColumnDef="action">
+            <md-header-cell *cdkHeaderCellDef> Action </md-header-cell>
+            <md-cell *cdkCellDef="let row">
+                <button md-button (click)="editCarType(row)">Edit</button>
+                <button md-button (click)="removeCarType(row)">Remove</button>
+            </md-cell>
+        </ng-container>
+    </md-table>
+
+</div>

@@ -1,0 +1,50 @@
+<div class="mat-elevation-z8">
+
+    <div class="add-car__wrapper">
+        <button md-raised-button (click)="createCar()">Add Mark</button>
+    </div>
+
+    <md-table #table [dataSource]="carList">
+        <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+        <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+        <ng-container cdkColumnDef="mark">
+            <md-header-cell *cdkHeaderCellDef> Mark </md-header-cell>
+            <md-cell *cdkCellDef="let row"> {{row._embedded.model._embedded.mark.name}} </md-cell>
+        </ng-container>
+        <ng-container cdkColumnDef="model">
+            <md-header-cell *cdkHeaderCellDef> Model </md-header-cell>
+            <md-cell *cdkCellDef="let row"> {{row._embedded.model.name}} </md-cell>
+        </ng-container>
+        <ng-container cdkColumnDef="vin">
+            <md-header-cell *cdkHeaderCellDef> VIN </md-header-cell>
+            <md-cell *cdkCellDef="let row"> {{row.vin}} </md-cell>
+        </ng-container>
+        <ng-container cdkColumnDef="odometer">
+            <md-header-cell *cdkHeaderCellDef> Odometer </md-header-cell>
+            <md-cell *cdkCellDef="let row"> {{row.km}} km </md-cell>
+        </ng-container>
+        <ng-container cdkColumnDef="year">
+            <md-header-cell *cdkHeaderCellDef> Year </md-header-cell>
+            <md-cell *cdkCellDef="let row"> {{row.year}} </md-cell>
+        </ng-container>
+        <ng-container cdkColumnDef="maintenances">
+            <md-header-cell *cdkHeaderCellDef> Maintenances </md-header-cell>
+            <md-cell *cdkCellDef="let row">
+                <md-list maintenances>
+                    <md-list-item *ngFor="let maintenance of row.maintenances">
+                        <span md-line>{{maintenance.type}} -> {{maintenance.next_maintenance}} km </span>
+                    </md-list-item>
+                </md-list>
+            </md-cell>
+        </ng-container>
+        <ng-container cdkColumnDef="action">
+            <md-header-cell *cdkHeaderCellDef> Action </md-header-cell>
+            <md-cell *cdkCellDef="let row" class="table__actions">
+                <button md-button (click)="maintainCar(row)">Maintain</button>
+                <button md-button (click)="editCar(row)">Edit</button>
+                <button md-button (click)="removeCar(row)">Remove</button>
+            </md-cell>
+        </ng-container>
+    </md-table>
+
+</div>

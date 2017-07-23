@@ -1,0 +1,52 @@
+{
+    "name": "auto-maintenance-tracker",
+    "description": "Simple app for tracking car maintenance",
+    "author": "igariok.ciobanu@gmail.com",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.0",
+        "zendframework/zend-component-installer": "0.7.0",
+        "zendframework/zend-mvc": "3.0.4",
+        "zendframework/zend-validator": "2.8.2",
+        "zendframework/zend-crypt": "3.2.0",
+        "zendframework/zend-mvc-plugin-flashmessenger": "1.0.0",
+        "doctrine/doctrine-orm-module": "1.1.1",
+        "zendframework/zend-mvc-form": "^1.0",
+        "zendframework/zend-mvc-plugins": "^1.0",
+        "doctrine/doctrine-module": "1.2.0",
+        "doctrine/migrations": "1.5.0",
+        "gedmo/doctrine-extensions": "2.4.26",
+        "zircote/hal": "^0.4.0",
+        "zendframework/zend-json": "^3.0",
+        "zendframework/zend-test": "^3.1",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "require-dev": {
+        "zfcampus/zf-development-mode": "3.1.0",
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\": "module/Application/src/",
+            "API\\": "module/API/src/",
+            "API\\Test\\": "module/API/tests/",
+            "Core\\": "module/Core/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApplicationTest\\": "module/Application/test/"
+        }
+    },
+    "extra": [],
+    "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "development-disable": "zf-development-mode disable",
+        "development-enable": "zf-development-mode enable",
+        "development-status": "zf-development-mode status",
+        "post-create-project-cmd": [
+            "@development-enable"
+        ]
+    }
+}

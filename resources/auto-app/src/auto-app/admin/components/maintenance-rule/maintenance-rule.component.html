@@ -1,0 +1,31 @@
+<div class="mat-elevation-z8">
+
+    <div class="add-car__wrapper">
+        <button md-raised-button (click)="createMaintenanceRule()">Add Maintenance Rule</button>
+    </div>
+
+    <md-table #table [dataSource]="maintenanceRuleList">
+        <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+        <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+        <ng-container cdkColumnDef="carType">
+            <md-header-cell *cdkHeaderCellDef> Car Type </md-header-cell>
+            <md-cell *cdkCellDef="let row"> {{row._embedded.carType.type}} </md-cell>
+        </ng-container>
+        <ng-container cdkColumnDef="maintenanceType">
+            <md-header-cell *cdkHeaderCellDef> Maintenance Type </md-header-cell>
+            <md-cell *cdkCellDef="let row"> {{row._embedded.maintenanceType.name}} </md-cell>
+        </ng-container>
+        <ng-container cdkColumnDef="name">
+            <md-header-cell *cdkHeaderCellDef> KM </md-header-cell>
+            <md-cell *cdkCellDef="let row"> {{row.km}} </md-cell>
+        </ng-container>
+        <ng-container cdkColumnDef="action">
+            <md-header-cell *cdkHeaderCellDef> Action </md-header-cell>
+            <md-cell *cdkCellDef="let row">
+                <button md-button (click)="editMaintenanceRule(row)">Edit</button>
+                <button md-button (click)="removeMaintenanceRule(row)">Remove</button>
+            </md-cell>
+        </ng-container>
+    </md-table>
+
+</div>

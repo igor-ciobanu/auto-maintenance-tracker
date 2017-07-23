@@ -1,0 +1,27 @@
+version: "2"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/dev/Dockerfile
+    volumes:
+      - .:/var/www/auto
+    env_file:
+      - db.env
+    environment:
+      - VIRTUAL_HOST=auto.local
+  db:
+    image: mysql
+    ports:
+      - "3336:3306"
+      - "2046:22"
+    env_file:
+      - db.env
+  proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
+    environment:
+      - DEFAULT_HOST=auto.local

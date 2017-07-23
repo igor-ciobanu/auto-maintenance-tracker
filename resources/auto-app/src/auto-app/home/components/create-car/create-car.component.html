@@ -1,0 +1,18 @@
+<form (ngSubmit)="create()" #carForm="ngForm">
+    <md-select placeholder="Car Model" name="carModelName" required [(ngModel)]="carModelId">
+        <md-option *ngFor="let carModel of carModelList | async" [value]="carModel.id">({{carModel._embedded.mark.name}}) {{ carModel.name }}</md-option>
+    </md-select>
+    <md-select placeholder="Car Type" name="carTypeName" required [(ngModel)]="carTypeId">
+        <md-option *ngFor="let carType of carTypeList | async" [value]="carType.id">{{ carType.type }}</md-option>
+    </md-select>
+    <md-input-container>
+        <input mdInput type="text" name="carVIN" placeholder="VIN" [(ngModel)]="carVIN" required>
+    </md-input-container>
+    <md-input-container>
+        <input mdInput type="number" name="carYear" placeholder="Year" [(ngModel)]="carYear" required>
+    </md-input-container>
+    <md-input-container>
+        <input mdInput type="number" name="carKm" placeholder="Km" [(ngModel)]="carKm" required>
+    </md-input-container>
+    <button type="submit" md-button [disabled]="!carForm.form.valid">Create</button>
+</form>

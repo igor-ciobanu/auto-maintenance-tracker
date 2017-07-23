@@ -1,0 +1,9 @@
+<form (ngSubmit)="create()" #carModelForm="ngForm">
+    <md-select placeholder="Car Mark" name="carMarkName" required [(ngModel)]="carMarkId">
+        <md-option *ngFor="let carMark of carMarkList | async" [value]="carMark.id">{{ carMark.name }}</md-option>
+    </md-select>
+    <md-input-container>
+        <input mdInput type="text" name="carModelName" placeholder="Car Model Name" [(ngModel)]="carModelName" required>
+    </md-input-container>
+    <button type="submit" md-button [disabled]="!carModelForm.form.valid">Create</button>
+</form>

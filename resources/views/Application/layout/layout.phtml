@@ -1,0 +1,36 @@
+<?= $this->doctype(); ?>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="/assets/css/deeppurple-amber.css" rel="stylesheet">
+        <link href="/assets/css/main.css" rel="stylesheet">
+
+        <?= $this->headTitle('Auto Maintenance Tracker')->setSeparator(' - ')->setAutoEscape(false); ?>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge');
+        ?>
+
+        <!-- Le Styles -->
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico']); ?>
+
+        <!-- Le Scripts -->
+        <?= $this->headScript(); ?>
+    </head>
+    <body>
+        <base href="/">
+        <?= $this->content; ?>
+        <?php
+            $this->angularDevelopmentMode() && $this->inlineScript()->appendFile($this->angularBuildPath('/js/build/auto-app/polyfills.dll.js'));
+            $this->angularDevelopmentMode() && $this->inlineScript()->appendFile($this->angularBuildPath('/js/build/auto-app/vendor.dll.js'));
+            
+            $this->inlineScript()->appendFile($this->angularBuildPath('/js/build/auto-app/polyfills.bundle.js'));
+            $this->inlineScript()->appendFile($this->angularBuildPath('/js/build/auto-app/vendor.bundle.js'));
+            $this->inlineScript()->appendFile($this->angularBuildPath('/js/build/auto-app/auto_app.bundle.js'));
+        ?>
+        <?= $this->inlineScript(); ?>
+    </body>
+</html>

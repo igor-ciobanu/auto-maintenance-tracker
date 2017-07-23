@@ -1,0 +1,6 @@
+<form (ngSubmit)="create()" #carTypeForm="ngForm">
+    <md-input-container>
+        <input mdInput type="text" name="carTypeName" placeholder="Car Type Name" [(ngModel)]="carTypeName" required>
+    </md-input-container>
+    <button type="submit" md-button [disabled]="!carTypeForm.form.valid">Create</button>
+</form>

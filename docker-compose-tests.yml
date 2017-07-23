@@ -1,0 +1,34 @@
+version: "2"
+services:
+  unit:
+    build:
+      context: .
+      dockerfile: ./docker/dev/Dockerfile
+    volumes:
+      - .:/var/www/auto
+    command: sh run_test.sh
+    environment:
+      - TEST_TYPE=unit
+
+  functional:
+    build:
+      context: .
+      dockerfile: ./docker/dev/Dockerfile
+    volumes:
+       - .:/var/www/auto
+    command: sh run_test.sh
+    environment:
+      - TEST_TYPE=functional
+      - APP_ENVIRONMENT=functional
+    env_file:
+      - db.env
+    links:
+      - db_test
+
+  db_test:
+    image: mysql
+    ports:
+      - "3306"
+      - "22"
+    env_file:
+      - db.env

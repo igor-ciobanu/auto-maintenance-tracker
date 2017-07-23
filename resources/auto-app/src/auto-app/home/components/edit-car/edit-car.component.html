@@ -1,0 +1,12 @@
+<form (ngSubmit)="update()" #carForm="ngForm">
+    <md-input-container>
+        <input mdInput type="text" name="carVIN" placeholder="Car VIN" [(ngModel)]="car.vin" required>
+    </md-input-container>
+    <md-input-container>
+        <input mdInput type="number" name="carYear" placeholder="Car Year" [(ngModel)]="car.year" required>
+    </md-input-container>
+    <md-input-container>
+        <input mdInput type="number" name="carKm" placeholder="Car Km" [(ngModel)]="car.km" required>
+    </md-input-container>
+    <button type="submit" md-button [disabled]="!carForm.form.valid">Update</button>
+</form>

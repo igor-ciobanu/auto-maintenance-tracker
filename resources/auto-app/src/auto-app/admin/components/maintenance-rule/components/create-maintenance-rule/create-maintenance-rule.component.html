@@ -1,0 +1,14 @@
+<form (ngSubmit)="create()" #maintenanceRuleForm="ngForm">
+    <md-select placeholder="Car Type" name="carTypeName" required [(ngModel)]="carTypeId">
+        <md-option *ngFor="let carType of carTypeList | async" [value]="carType.id">{{ carType.type }}</md-option>
+    </md-select>
+    <md-select placeholder="Maintenance Type" name="maintenanceType" required [(ngModel)]="maintenanceTypeId">
+        <md-option *ngFor="let maintenanceType of maintenanceTypeList | async" [value]="maintenanceType.id">
+            {{ maintenanceType.name }}
+        </md-option>
+    </md-select>
+    <md-input-container>
+        <input mdInput type="number" name="maintenanceTypeKM" placeholder="Maintenance Type KM" [(ngModel)]="maintenanceTypeKM" required>
+    </md-input-container>
+    <button type="submit" md-button [disabled]="!maintenanceRuleForm.form.valid">Create</button>
+</form>

@@ -42,6 +42,38 @@ Now you can access your project:
 http://auto.local
 ```
 
+### Installing without docker
+
+1 Clone project on your local PC
+```bash
+git clone "https://github.com/igariok1990/auto-maintenance-tracker"
+```
+
+2. Run composer install
+```bash
+composer install
+```
+
+3. Run npm install
+```bash
+cd resource/auto-app
+npm run build:prod:aot
+```
+
+4. Create database with name 'auto'
+
+5. Connect app on created database
+(Use doctrine.local.php, you can rename existing file doctrine.local.php.dist)
+
+6. Run migration to create all tables:
+```bash
+./vendor/bin/doctrine-module migrations:migrate
+```
+
+7. Create a virtual host for the app
+
+8. Add in /etc/hosts created host
+
 ### Angular build
 Build js (prod mode)
 ```bash

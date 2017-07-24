@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: igor
- * Date: 20/07/17
- * Time: 8:00 AM
- */
 
 namespace API\Controller\Factory;
 

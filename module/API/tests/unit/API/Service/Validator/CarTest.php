@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: igor
- * Date: 21/07/17
- * Time: 3:41 PM
- */
 
 namespace unit\API\Service\Validator;
 

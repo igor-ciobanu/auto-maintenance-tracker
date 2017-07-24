@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: igorciobanu
- * Date: 11/21/14
- * Time: 12:10 PM
- */
+
 namespace API\Controller\View;
 
 use Zend\View\Model\JsonModel;

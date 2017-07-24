@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: igor
- * Date: 09/06/17
- * Time: 1:07 PM
- */
 
 namespace unit\API\Service;
 

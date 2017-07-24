@@ -1,8 +1,5 @@
 <?php
-/**
- * @author Cosmin Dordea <cosmin.dordea@yopeso.com
- * @copyright Yopeso
- */
+
 namespace API\Helper;
 
 trait HasErrorMessage

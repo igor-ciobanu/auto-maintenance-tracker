@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: igor
- * Date: 21/07/17
- * Time: 8:31 AM
- */
 
 namespace API\ResponseModel;
 

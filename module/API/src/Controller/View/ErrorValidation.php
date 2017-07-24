@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: iciobanu
- * Date: 6/22/16
- * Time: 9:08 AM
- */
 
 namespace API\Controller\View;
 

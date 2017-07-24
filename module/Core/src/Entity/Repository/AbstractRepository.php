@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: igor
- * Date: 19/07/17
- * Time: 9:38 PM
- */
 
 namespace Core\Entity\Repository;
 

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: iciobanu
- * Date: 2/16/16
- * Time: 12:17 PM
- */
 
 namespace API\Helper;
 
